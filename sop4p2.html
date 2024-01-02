@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculator</title>
+</head>
+<body>
+
+<h2>Calculator</h2>
+<form onsubmit="calculate(); return false;">
+  <label for="num1">Enter first number:</label>
+  <input type="number" id="num1" name="num1">
+  <br>
+  <label for="num2">Enter second number:</label>
+  <input type="number" id="num2" name="num2">
+  <br>
+  <button type="submit">Calculate</button>
+</form>
+<p>Addition: <span id="addition"></span></p>
+<p>Division: <span id="division"></span></p>
+
+  <script>
+function calculate() {
+  let num1 = Number(document.getElementById("num1").value);
+  let num2 = Number(document.getElementById("num2").value);
+
+  // Perform calculations
+  let sum = num1 + num2;
+  let quotient = num2 === 0 ? "Cannot divide by zero" : num1 / num2; // Handle division by zero
+
+  // Display results
+  document.getEle
+mentById("addition").textContent = sum;
+  document.getElementById("division").textContent = quotient;
+}
+</script>
+
+</body>
+</html>
